@@ -63,6 +63,21 @@ docker compose -f pwd.yml restart backend
 🔸 Agar migration error aaye
 docker compose -f pwd.yml exec backend bench --site calcoerp.com migrate
 
+🔹 1. Actual container name check karo
+     docker ps
+
+    Tumhe output milega something like:
+
+    frappe_docker-backend-1
+    frappe_docker-frontend-1
+    frappe_docker-db-1
+ 👉 Yaha backend ka exact naam copy karo
+
+🔹 2. Correct command use karo
+
+    Example (agar naam hai frappe_docker-backend-1):
+
+  docker cp frappe_docker-backend-1:/home/frappe/frappe-bench/apps/calco_erp ./
 
 
 extra : 
