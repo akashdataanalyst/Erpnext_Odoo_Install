@@ -63,6 +63,8 @@ docker compose -f pwd.yml restart backend
 🔸 Agar migration error aaye
 docker compose -f pwd.yml exec backend bench --site calcoerp.com migrate
 
+
+# Note Custom App ko bahar nikala container se tabhi deply hota hai aws pr 
 🔹 1. Actual container name check karo
      docker ps
 
