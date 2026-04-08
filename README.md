@@ -124,4 +124,5 @@ docker compose -f pwd.yml exec backend bench --site calcoerp.com migrate
 extra : 
 1 . docker compose down -v  # Down karne ke liye
 2 .docker compose -f pwd.yml up -d # Dubara Start Ke liye
+3 .docker compose -f pwd.yml restart  # restart ke liye
 
