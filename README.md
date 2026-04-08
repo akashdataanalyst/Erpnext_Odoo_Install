@@ -1,6 +1,5 @@
 # Erpnext-with-Docker
 
-
 sudo apt update && sudo apt upgrade -y
 curl -fsSL https://get.docker.com | sudo sh
 # Note ubuntu user name hai  "akash" 
@@ -25,12 +24,10 @@ nano .env
 
 
 # Note pwd .env  FILE Main Sites ka naam bhee add karna hai
-
-# bench new-site calcoerp.com --mariadb-user-host-login-scope='%' --admin-password=admin --db-root-username=root --db-root-password=admin --install-app erpnext --set-default
-
+# bench new-site calcoerp.com --mariadb-user-host-login-scope='%' --admin-password=admin --db-root-                username=root --db-root-password=admin --install-app erpnext --set-default
 # FRAPPE_SITE_NAME_HEADER: calcoerp.com
-docker compose -f pwd.yml up -d
 
+docker compose -f pwd.yml up -d
 docker compose -f pwd.yml logs -f create-site
 
 http://YOUR_EC2_PUBLIC_IP:8080
@@ -38,6 +35,36 @@ http://YOUR_EC2_PUBLIC_IP:8080
 http://localhost:8080/
 
 Done
+
+# Docker Ke container Check ke liye 
+docker ps
+
+# frappe_docker-backend-1
+   frappe_docker-db-1
+    frappe_docker-frontend-1
+👉 Hume backend container use karna hai.
+
+# Container Ke undar jane ke liye 
+docker exec -it frappe_docker-backend-1 bash
+
+# Install app Check karne ke liye 
+bench list-apps
+# output
+# frappe  16.14.0 UNVERSIONED
+# erpnext 16.13.0 UNVERSIONED
+
+# Agar tumhe kisi specific site (jaise calcoerp.com) ke apps dekhne hain:
+bench --site calcoerp.com list-apps
+
+# app Folder bhee use kar sakte hai 
+cd frappe-bench/apps
+ls
+
+# Agar baar-baar container ke andar nahi jana: not compulsory
+docker exec -it frappe_docker-backend-1 bench list-apps
+
+# Ya specific site ke liye: not compulsory
+docker exec -it frappe_docker-backend-1 bench --site calcoerp.com list-apps
 
 # app Create calco_erp
 
