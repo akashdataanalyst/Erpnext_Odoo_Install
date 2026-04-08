@@ -23,8 +23,12 @@ nano .env
 # Note example.env  FILE Main Sites ka naam bhee add karna hai
 
 
-# FRAPPE_SITE_NAME_HEADER: calcoerp.com
+
 # Note pwd .env  FILE Main Sites ka naam bhee add karna hai
+
+# bench new-site calcoerp.com --mariadb-user-host-login-scope='%' --admin-password=admin --db-root-username=root --db-root-password=admin --install-app erpnext --set-default
+
+# FRAPPE_SITE_NAME_HEADER: calcoerp.com
 docker compose -f pwd.yml up -d
 
 docker compose -f pwd.yml logs -f create-site
