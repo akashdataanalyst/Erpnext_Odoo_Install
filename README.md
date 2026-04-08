@@ -74,6 +74,9 @@ docker compose -f pwd.yml exec backend ls apps
 👉 Agar output mein calco_erp nahi hai → create karna padega
 
 🔹 Step 2: App create karo (agar nahi hai)
+ # Container ke undar ho toh 
+ bench new-app calco_erp
+ # bahar ho toh
 docker compose -f pwd.yml exec backend bench new-app calco_erp
 🔹 Step 3: Site pe install karo
 docker compose -f pwd.yml exec backend bench --site calcoerp.com install-app calco_erp
