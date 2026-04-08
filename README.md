@@ -79,6 +79,9 @@ docker compose -f pwd.yml exec backend ls apps
  # bahar ho toh
 docker compose -f pwd.yml exec backend bench new-app calco_erp
 🔹 Step 3: Site pe install karo
+ # Container ke undar ho toh
+ bench --site calcoerp.com install-app calco_erp
+ # bahar ho toh
 docker compose -f pwd.yml exec backend bench --site calcoerp.com install-app calco_erp
 🔹 Step 4: Confirm
 docker compose -f pwd.yml exec backend bench --site calcoerp.com list-apps
