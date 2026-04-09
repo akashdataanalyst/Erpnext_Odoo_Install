@@ -100,3 +100,11 @@ Browser me check karo
 Agar kahin atak jao toh screenshot bhej dena
 👉 main turant bata dunga kya issue hai (live debugging 👍)
 Dev Containers (important)
+
+
+
+
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git push -u origin main
