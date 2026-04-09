@@ -5,8 +5,9 @@ VS Code open karo aur ye extensions install karo:
 ✅ Required Extensions:
 Docker
 Dev Containers (by Microsoft)
-🔷 STEP 2: Docker container run hona chahiye
 
+
+🔷 STEP 2: Docker container run hona chahiye
 Terminal me check karo:
 
 docker ps
@@ -19,6 +20,8 @@ Agar nahi dikh raha:
 
 docker compose -f pwd.yml up -d
 🔷 STEP 3: VS Code ko container se connect karo
+
+ubuntu mai Code . 
 VS Code open karo
 Press:
 Ctrl + Shift + P
