@@ -4,7 +4,7 @@ git commit -m "Initial commit"
 git branch -M main
 git push -u origin main
 
-# install app ko hatana ke liye 
+# install app ko uninstall ke liye 
 bench --site calcoerp.com uninstall-app maintenance_management
 
 # install app delete karne ke liye 
@@ -66,7 +66,9 @@ bench --site <site-name> install-app maintenance_management
 bench --site <site-name> install-app calco_erp
 bench --site <site-name> migrate
 ```
+# main 
 
+docker compose restart 
 ## 5. Docker Me Kya Karna Hai
 
 Docker me best rule:
