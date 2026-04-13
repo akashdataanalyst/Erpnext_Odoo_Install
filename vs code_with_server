@@ -20,6 +20,22 @@ Host aws-erp
     HostName your-ip
     User ubuntu
     IdentityFile C:\path\your-key.pem
+
+
+✅ Step-by-step (Exactly ye karo)
+🔹 Step 1: VS Code me extensions install karo
+Docker
+Dev Containers (ya Remote Development pack)
+🔹 Step 2: Container identify karo
+
+Server terminal me already ho, run karo:
+
+docker ps
+
+👉 Tumhe kuch aisa dikhega:
+
+frappe_docker-backend-1
+
 3. Connect karo
 
 👉 Remote-SSH: Connect to Host → aws-erp
