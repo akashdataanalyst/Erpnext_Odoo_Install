@@ -1,0 +1,42 @@
+✅ Step 1: WSL enable karo (PowerShell as Admin)
+wsl --install
+
+Agar already installed hai, to next step pe jao.
+
+✅ Step 2: Available distros check karo
+wsl --list --online
+
+Tumhe list me Ubuntu-22.04 dikh jayega.
+
+✅ Step 3: Ubuntu 22.04 install karo
+wsl --install -d Ubuntu-22.04
+✅ Step 4: Restart system
+
+Installation ke baad system restart karo (agar bole to).
+
+✅ Step 5: Setup username/password
+
+Restart ke baad Ubuntu open hoga aur bolega:
+
+Enter new UNIX username:
+Enter new UNIX password:
+
+Yaha apna username/password set karo.
+
+✅ Step 6: Verify install
+lsb_release -a
+
+Output me Ubuntu 22.04 dikhna chahiye.
+
+🔧 Agar issue aaye to
+
+Agar error aaye (common cases):
+
+👉 WSL version update
+wsl --update
+👉 Default version 2 set karo
+wsl --set-default-version 2
+💡 Bonus (Useful commands)
+wsl -l -v          # installed distros check
+wsl --shutdown     # restart WSL
+wsl --unregister Ubuntu-22.04   # delete distro
