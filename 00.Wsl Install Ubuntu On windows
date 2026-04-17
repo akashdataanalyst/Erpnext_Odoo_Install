@@ -43,5 +43,7 @@ wsl --set-default-version 2
 
 💡 Bonus (Useful commands)
 wsl -l -v          # installed distros check
+
+wsl -d Ubuntu-22.04 # for start Ubuntu 
 wsl --shutdown     # restart WSL
 wsl --unregister Ubuntu-22.04   # delete distro
