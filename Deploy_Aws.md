@@ -12,11 +12,12 @@ rm -rf apps/maintenance_management
 
 # Contaniner mai app add karna leke aana , migrate karna 
 
-cd /home/frappe/frappe-bench/apps
+# cd /home/frappe/frappe-bench/apps
 
 bench get-app https://github.com/akashdataanalyst/maintenance.git
 
 # install 
+# cd /home/frappe/frappe-bench
 bench --site calcoerp.com install-app maintenance_management
 
 # migrate
