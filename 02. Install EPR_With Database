@@ -112,3 +112,48 @@ cat sites/calcoerp.com/site_config.json
 
 
 
+
+
+
+
+
+
+
+
+
+1️⃣ DB container me jao
+docker exec -it frappe_docker_db_1 bash
+2️⃣ MariaDB login
+mysql -u root -p
+
+👉 password: admin
+
+3️⃣ Users check
+SELECT user, host FROM mysql.user;
+4️⃣ Wrong host entry delete
+DROP USER '_80c3f4f986f307f0'@'172.18.0.4';
+FLUSH PRIVILEGES;
+5️⃣ Correct password set (IMPORTANT)
+ALTER USER '_80c3f4f986f307f0'@'%' IDENTIFIED BY 'Bx9qQKhKj5ZrZcwp';
+FLUSH PRIVILEGES;
+6️⃣ Restart containers
+docker-compose restart
+7️⃣ Test (backend container)
+docker exec -it frappe_docker_backend_1 bash
+bench --site calcoerp.com list-apps
+✅ Final Result
+
+Output aana chahiye:
+
+frappe
+erpnext
+
+
+
+
+
+
+
+
+
+
