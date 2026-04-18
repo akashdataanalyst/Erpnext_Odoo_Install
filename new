@@ -94,3 +94,21 @@ Enter mysql super user [root]:
 bench --site calcoerp.com install-app erpnext
 ✅ STEP 9: Default site set करो
 bench use calcoerp.com
+
+# Cointer mai undar jane ke liye 
+docker exec -it frappe_docker_backend_1 bash
+# database check karne ke liye 
+cat sites/calcoerp.com/site_config.json
+
+# output 
+"db_name": "_80c3f4f986f307f0",
+ "db_password": "Bx9qQKhKj5ZrZcwp",
+ "db_type": "mariadb",
+ "db_user": "_80c3f4f986f307f0"
+}
+
+
+
+
+
+
