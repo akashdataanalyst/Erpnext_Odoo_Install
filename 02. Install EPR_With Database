@@ -51,20 +51,7 @@ db
 backend
 frontend
 redis
-✅ STEP 6: DB container check करो (यहाँ सबसे ज्यादा गलती होती है)
-docker exec -it frappe_docker_db_1 bash
 
-फिर:
-
-mysql -u root -p
-
-password: admin
-
-Check DB:
-
-SHOW DATABASES;
-
-👉 अगर यहाँ MySQL नहीं खुल रहा → DB container issue है
 
 ✅ STEP 7: Site manually create करो (AUTO नहीं)
 
@@ -94,6 +81,22 @@ Enter mysql super user [root]:
 bench --site calcoerp.com install-app erpnext
 ✅ STEP 9: Default site set करो
 bench use calcoerp.com
+
+
+✅ STEP 6: DB container check करो (यहाँ सबसे ज्यादा गलती होती है)
+docker exec -it frappe_docker_db_1 bash
+
+फिर:
+
+mysql -u root -p
+
+password: admin
+
+Check DB:
+
+SHOW DATABASES;
+
+👉 अगर यहाँ MySQL नहीं खुल रहा → DB container issue है
 
 # Cointer mai undar jane ke liye 
 docker exec -it frappe_docker_backend_1 bash
