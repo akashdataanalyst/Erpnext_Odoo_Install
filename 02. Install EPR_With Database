@@ -111,6 +111,9 @@ cat sites/calcoerp.com/site_config.json
 }
 
 
+agar depoy karne ke baad bhee bhee ui pr show nahi ho raha hai then pwd se bydefult change karo 
+nano pwd.yml
+
 
 
 
