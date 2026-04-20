@@ -124,12 +124,62 @@ nano pwd.yml
 
 
 
+**************🔹 Step 2: App create karo (agar nahi hai)*****
 
 
+ # Container ke undar ho toh 
+ bench new-app calco_erp
+ # bahar ho toh
+docker compose -f pwd.yml exec backend bench new-app calco_erp
+🔹 Step 3: Site pe install karo
+ # Container ke undar ho toh
+ bench --site calcoerp.com install-app calco_erp
+ # bahar ho toh
+docker compose -f pwd.yml exec backend bench --site calcoerp.com install-app calco_erp
+🔹 Step 4: Confirm
+ # Container ke undar ho toh
+ bench --site calcoerp.com list-apps
+ # bahar ho toh
+docker compose -f pwd.yml exec backend bench --site calcoerp.com list-apps
+
+👉 Expected:
+           frappe
+           erpnext
+           calco_erp ✅
+⚠️ Important (real-world issue jo log miss karte hain)
+🔸 Agar error aaye: ModuleNotFoundError
+
+Run:
+
+docker compose -f pwd.yml restart backend
+🔸 Agar migration error aaye
+docker compose -f pwd.yml exec backend bench --site calcoerp.com migrate
 
 
+# Note Custom App ko bahar nikala container se tabhi deply hota hai aws pr 
+🔹 1. Actual container name check karo
+     docker ps
+
+    Tumhe output milega something like:
+
+    frappe_docker-backend-1
+    frappe_docker-frontend-1
+    frappe_docker-db-1
+ 👉 Yaha backend ka exact naam copy karo
+
+🔹 2. Correct command use karo
+
+    Example (agar naam hai frappe_docker-backend-1):
+
+  docker cp frappe_docker-backend-1:/home/frappe/frappe-bench/apps/calco_erp ./
 
 
+extra : 
+1 . docker compose down -v  # Down karne ke liye
+2 .docker compose -f pwd.yml up -d # Dubara Start Ke liye
+3 .docker compose -f pwd.yml restart  # restart ke liye
+4 docker compose restart
+5 docker compose up -d
 
 
 
