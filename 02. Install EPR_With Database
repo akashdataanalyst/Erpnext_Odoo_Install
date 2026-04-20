@@ -32,8 +32,20 @@ Paste 👇
 MYSQL_ROOT_PASSWORD=admin
 ADMIN_PASSWORD=admin
 
+nano pwd.yml
+
+
+# bench new-site calcoerp.com  --mariadb-user-host-login-scope='%' --admin-password=admin --db-root-                username=root --db-root-password=admin --install-app erpnext --set-default calcoerp.com
+
+# FRAPPE_SITE_NAME_HEADER: calcoerp.com
+
+
+
 
 ✅ STEP 5: Containers start करो
+
+docker compose up -d
+
 docker-compose -f pwd.yml up -d
 
 Check:
@@ -112,15 +124,6 @@ SHOW DATABASES;
 👉 अगर यहाँ MySQL नहीं खुल रहा → DB container issue है
 
 
-
-
-agar depoy karne ke baad bhee bhee ui pr show nahi ho raha hai then pwd se bydefult change karo 
-nano pwd.yml
-
-nano pwd.yml
-# bench new-site  --mariadb-user-host-login-scope='%' --admin-password=admin --db-root-                username=root --db-root-password=admin --install-app erpnext --set-default calcoerp.com
-
-# FRAPPE_SITE_NAME_HEADER: calcoerp.com
 
 
 
