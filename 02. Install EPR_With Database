@@ -21,6 +21,7 @@ docker-compose --version
 ✅ STEP 3: Official Frappe Docker repo clone
 git clone https://github.com/frappe/frappe_docker
 cd frappe_docker
+
 ✅ STEP 4: Correct .env file बनाओ (ये बहुत important है ⚠️)
 
 
@@ -31,12 +32,6 @@ Paste 👇
 MYSQL_ROOT_PASSWORD=admin
 ADMIN_PASSWORD=admin
 
-❌ ये मत डालो:
-
-SITES=calcoerp.com
-INSTALL_APPS=erpnext
-
-👉 ये अक्सर DB create issue करता है
 
 ✅ STEP 5: Containers start करो
 docker-compose -f pwd.yml up -d
@@ -75,15 +70,18 @@ Enter mysql super user [root]:
 
 👉 अगर यहाँ error आए:
 
-"Access denied" → root password mismatch
-"Can't connect" → db hostname गलत
+
 ✅ STEP 8: erpnext install करो
+
 bench --site calcoerp.com install-app erpnext
+
+
 ✅ STEP 9: Default site set करो
 bench use calcoerp.com
 
 
 ✅ STEP 6: DB container check करो (यहाँ सबसे ज्यादा गलती होती है)
+
 docker exec -it frappe_docker_db_1 bash
 
 फिर:
